@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://visionboostersagency.com/sitemap.xml
+Host: https://visionboostersagency.com
