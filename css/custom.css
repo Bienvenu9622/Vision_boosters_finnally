@@ -1,0 +1,395 @@
+/* ============================
+   Vision Boosters – Custom UI
+   Subtile modernisation du design
+   sans casser la base Webflow
+   ============================ */
+
+:root {
+  --vb-primary: #5f64e1;
+  --vb-primary-soft: rgba(95, 100, 225, 0.12);
+  --vb-secondary: #dc5e6b;
+  --vb-secondary-soft: rgba(220, 94, 107, 0.1);
+  --vb-dark: #050816;
+  --vb-surface: #070b1e;
+  --vb-surface-alt: #0b1025;
+  --vb-border-subtle: rgba(148, 163, 184, 0.18);
+  --vb-text-main: #e5e7eb;
+  --vb-text-soft: #9ca3af;
+  --vb-text-strong: #f9fafb;
+  --vb-radius-lg: 20px;
+  --vb-radius-md: 14px;
+  --vb-radius-pill: 999px;
+  --vb-shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.45);
+}
+
+/* --------- Base & Layout --------- */
+
+body.body {
+  background: radial-gradient(circle at top left, #1a1034 0, #050816 40%, #020617 100%);
+  color: var(--vb-text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.section,
+.banner-div {
+  position: relative;
+}
+
+.container,
+.w-container,
+.container-4,
+.container-titre {
+  max-width: 1160px;
+}
+
+.section.section-banner {
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 767px) {
+  .section.section-banner {
+    padding-top: 4.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* --------- Typography --------- */
+
+.h1,
+.h2,
+.h3 {
+  letter-spacing: -0.03em;
+}
+
+.h1 {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--vb-text-strong);
+}
+
+.h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--vb-text-strong);
+}
+
+.h3 {
+  font-size: clamp(1.25rem, 2.1vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.subtitle,
+.grey,
+.light-grey,
+.white,
+.blue-grey,
+.paragraph-colonne-gauche-taille,
+.text-avantages,
+.smaller {
+  line-height: 1.7;
+  font-size: 0.97rem;
+}
+
+.grey,
+.light-grey,
+.blue-grey {
+  color: var(--vb-text-soft);
+}
+
+.white {
+  color: var(--vb-text-main);
+}
+
+.light-blue,
+.bleu-light,
+.blue {
+  color: var(--vb-primary);
+}
+
+/* Limiter la largeur des blocs de texte longs pour la lisibilité */
+.set-width,
+.set-width.light-grey,
+.set-width.mobile-centered,
+.texte-gauche p,
+.texte-gauche .light-grey {
+  max-width: 640px;
+}
+
+/* --------- Hero (accueil & pages internes) --------- */
+
+.banner-div .subtitle {
+  margin-top: 1.25rem;
+}
+
+.banner-btn-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .banner-btn-container {
+    justify-content: center;
+  }
+}
+
+.video.embed-video img,
+.image-phone.cover,
+.image-a-droite img {
+  border-radius: var(--vb-radius-lg);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.55);
+  object-fit: cover;
+}
+
+/* --------- Boutons --------- */
+
+.btn-1,
+.btn-2,
+.btn-3-outline {
+  border-radius: var(--vb-radius-pill) !important;
+  padding: 0.85rem 1.8rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out,
+    background 0.18s ease-out, color 0.18s ease-out, border-color 0.18s ease-out;
+}
+
+.btn-1,
+.btn-2 {
+  background: linear-gradient(135deg, var(--vb-primary), var(--vb-secondary));
+  color: #ffffff !important;
+}
+
+.btn-3-outline {
+  background: rgba(15, 23, 42, 0.4);
+  border-color: rgba(148, 163, 184, 0.4);
+  color: var(--vb-text-strong) !important;
+  backdrop-filter: blur(18px);
+}
+
+.btn-1:hover,
+.btn-2:hover,
+.btn-3-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--vb-shadow-soft);
+}
+
+.btn-3-outline:hover {
+  border-color: var(--vb-primary);
+  background: radial-gradient(circle at top left, rgba(95, 100, 225, 0.32), rgba(15, 23, 42, 0.85));
+}
+
+.text-block-15 {
+  font-weight: 600;
+}
+
+/* --------- Cartes / blocs (services, avantages, packs) --------- */
+
+.wrap-content-avantage,
+.pack-formation-container,
+.wrap-content-coeur,
+.pack-container {
+  border-radius: var(--vb-radius-lg);
+  border: 1px solid var(--vb-border-subtle);
+  background: radial-gradient(circle at top left, rgba(95, 100, 225, 0.08), rgba(15, 23, 42, 0.9));
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+}
+
+.wrap-content-avantage:hover,
+.pack-formation-container:hover,
+.wrap-content-coeur:hover,
+.pack-container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vb-shadow-soft);
+  border-color: rgba(129, 140, 248, 0.9);
+}
+
+.wrap-content-avantage,
+.wrap-content-coeur {
+  padding: 1.4rem 1.3rem;
+}
+
+.pack-formation-container .pack-formation-info {
+  padding: 1.2rem 1.3rem 1.35rem;
+}
+
+.forma-card,
+.image-coeur-de-metier,
+.image-composition img {
+  border-radius: var(--vb-radius-md);
+}
+
+.les-avantages {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.les-avantages .h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.wrap-avantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+}
+
+.pack-mindeo-formation-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+  margin-top: 2.2rem;
+}
+
+/* --------- Sections Promotion / CTA --------- */
+
+.pack-cta-container._100-tablette,
+.section.bg.less-padding.bg-lighter.calendly {
+  border-radius: 32px 32px 0 0;
+  background: radial-gradient(circle at top left, rgba(95, 100, 225, 0.28), #020617);
+}
+
+.pack-forma-cta-left {
+  padding-right: 2.2rem;
+}
+
+@media (max-width: 991px) {
+  .pack-forma-cta-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.badge.relative {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--vb-radius-pill);
+  background: rgba(15, 23, 42, 0.92);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+/* Calendly placeholder – full width on mobile */
+.calendly-placeholder {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .calendly-placeholder {
+    min-width: 100% !important;
+    height: 520px !important;
+  }
+}
+
+/* --------- Footer --------- */
+
+.footer {
+  background: radial-gradient(circle at top, #020617, #000000);
+  border-top: 1px solid rgba(55, 65, 81, 0.7);
+}
+
+.footer-container {
+  padding-top: 3.2rem;
+  padding-bottom: 2.5rem;
+}
+
+.corps-footer {
+  row-gap: 2.2rem;
+}
+
+.titre-footer,
+.section-title h3,
+.section-title-sm h3,
+.mentions-bas-de-pages.gras {
+  color: var(--vb-text-strong);
+}
+
+.reseau-sociaux .wrap-reseaux a {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: var(--vb-text-main);
+  margin-right: 0.4rem;
+  transition: transform 0.18s ease-out, background 0.18s ease-out,
+    border-color 0.18s ease-out, color 0.18s ease-out;
+}
+
+.reseau-sociaux .wrap-reseaux a:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--vb-primary), var(--vb-secondary));
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.separateur-line {
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.55), transparent);
+}
+
+.links-policy,
+.links-policy p,
+.link-page-footer {
+  color: var(--vb-text-soft);
+  font-size: 0.85rem;
+}
+
+.link-page-footer:hover {
+  color: var(--vb-text-strong);
+}
+
+/* --------- Divers & Accessibilité --------- */
+
+/* Corrige les commentaires invalides éventuels // dans le CSS inline en les
+   laissant être écrasés par des règles valides ici */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(15, 23, 42, 0.85);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--vb-primary), var(--vb-secondary));
+}
+
+ul.list {
+  padding-left: 1.1rem;
+}
+
+ul.list li {
+  margin-bottom: 0.35rem;
+}
+
+.quote {
+  border-left: 3px solid rgba(129, 140, 248, 0.7);
+  padding-left: 1rem;
+}
+
+/* Petits ajustements sur les sections grises pour mieux contraster */
+.section.light-grey,
+.section.white-bg,
+.section.bg-lighter {
+  background-color: rgba(15, 23, 42, 0.96);
+}
+
