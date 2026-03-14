@@ -248,6 +248,12 @@
 <!-- This site was created by Vision Boosters Agency. https://visionboostersagency.com/ -->
 
 <body class="body">
+  <div class="vb-progress-bar" id="vbProgressBar"></div>
+  <div class="vb-bg-glow">
+    <div class="vb-orb vb-orb-1"></div>
+    <div class="vb-orb vb-orb-2"></div>
+    <div class="vb-orb vb-orb-3"></div>
+  </div>
   <div class="page-wrapper">
     <div class="banner-div">
       <div data-w-id="71b7749c-61de-0a7a-0272-7bd5905b6a3f" class="gradient-container">
@@ -681,6 +687,7 @@
             <img src="images/partner/Profile%20shine.jpg" alt="Profile Shine" class="vb-partner-logo">
             <img src="images/partner/Tweho%20logo-1.jpg" alt="Tweho" class="vb-partner-logo">
             <img src="images/partner/Spa_La%203.png" alt="Spa La 3" class="vb-partner-logo">
+            <img src="images/partner/logo.webp" alt="Partner Logo" class="vb-partner-logo">
             
             <!-- Set 2 (Duplicate for infinite loop) -->
             <img src="images/partner/Armoirie_Burundi-242x300.png" alt="Armoirie Burundi" class="vb-partner-logo">
@@ -692,6 +699,7 @@
             <img src="images/partner/Profile%20shine.jpg" alt="Profile Shine" class="vb-partner-logo">
             <img src="images/partner/Tweho%20logo-1.jpg" alt="Tweho" class="vb-partner-logo">
             <img src="images/partner/Spa_La%203.png" alt="Spa La 3" class="vb-partner-logo">
+            <img src="images/partner/logo.webp" alt="Partner Logo" class="vb-partner-logo">
           </div>
         </div>
       </div>
@@ -1088,6 +1096,34 @@
     send.addEventListener('click', handleSend);
     input.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') handleSend();
+    });
+
+    // Premium Scroll Effects
+    const header = document.querySelector('.spark-square-menu-with-centered-links');
+    const progressBar = document.getElementById('vbProgressBar');
+
+    window.addEventListener('scroll', () => {
+      // Header Blur on Scroll
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      // Progress Bar Calculation
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + "%";
+    });
+
+    // AOS Premium Initialization
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
+      delay: 50
     });
   </script>
 </body>

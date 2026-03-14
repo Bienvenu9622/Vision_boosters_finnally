@@ -23,6 +23,7 @@
   <meta property="twitter:description" content="Découvrez nos services digitaux : développement web, marketing digital, intelligence artificielle, automatisation, community management et assistance virtuelle." />
   <meta property="twitter:image" content="https://visionboostersagency.com/images/Color.png" />
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://visionboostersagency.com https://assets.calendly.com; connect-src 'self' https://www.google-analytics.com; frame-src 'self' https://calendly.com;">
   <meta content="jsmxSEuNvst75-p6-G6afNcC5TxLqPkSHJzIAG0WQco" name="google-site-verification">
   <meta content="Webflow" name="generator">
   <link href="css/project-mind.webflow.0532ac9ef.min.css" rel="stylesheet" type="text/css">
@@ -136,6 +137,12 @@
 </head>
 
 <body class="body">
+  <div class="vb-progress-bar" id="vbProgressBar"></div>
+  <div class="vb-bg-glow">
+    <div class="vb-orb vb-orb-1"></div>
+    <div class="vb-orb vb-orb-2"></div>
+    <div class="vb-orb vb-orb-3"></div>
+  </div>
   <div class="page-wrapper">
     <div data-collapse="medium" data-animation="default" data-duration="400"
     data-w-id="eea8426e-8ced-44c5-cdeb-dc123330a187" data-easing="ease" data-easing2="ease" role="banner"
@@ -630,14 +637,6 @@
       windowChat.style.display = windowChat.style.display === 'flex' ? 'none' : 'flex';
     });
 
-    close.addEventListener('click', () => {
-      windowChat.style.display = 'none';
-    });
-
-    function chatAction(text) {
-      window.open(`https://wa.me/25766488517?text=${encodeURIComponent("Bonjour Vision Boosters, je souhaiterais des informations sur : " + text)}`, '_blank');
-    }
-
     function handleSend() {
       const msg = input.value.trim();
       if (msg) {
@@ -646,9 +645,38 @@
       }
     }
 
+    function chatAction(text) {
+      window.open(`https://wa.me/25766488517?text=${encodeURIComponent("Bonjour Vision Boosters, je souhaiterais des informations sur : " + text)}`, '_blank');
+    }
+
     send.addEventListener('click', handleSend);
     input.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') handleSend();
+    });
+
+    // Premium Scroll Effects
+    const header = document.querySelector('.spark-square-menu-with-centered-links');
+    const progressBar = document.getElementById('vbProgressBar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + "%";
+    });
+
+    // AOS Premium Initialization
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
+      delay: 50
     });
   </script>
 </body>
