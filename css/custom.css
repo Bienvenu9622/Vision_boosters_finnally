@@ -567,7 +567,12 @@ body.body {
   opacity: 1;
 }
 
-/* Grids */
+.vb-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 .vb-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -583,6 +588,9 @@ body.body {
 @media (max-width: 991px) {
   .vb-grid-3 {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .vb-grid-2 {
+    grid-template-columns: 1fr;
   }
 }
 
