@@ -21,6 +21,9 @@
 <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<!-- Calendly badge widget end -->
 
 
 
@@ -63,11 +66,12 @@
   <meta content="Webflow" name="generator" />
   <link href="css/project-mind.webflow.0532ac9ef.min.css" rel="stylesheet" type="text/css" />
   <link href="css/custom.css" rel="stylesheet" type="text/css" />
-  <link href="css/custom.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+  <!-- External Scripts - Config Required 
   <script type="text/javascript" async="" src="https://widget.intercom.io/widget/your_app_id"></script>
   <script type="text/javascript" async="" charset="UTF-8" src="js/provesrc.js"></script>
+  -->
   <script async="" src="js/gtm.js"></script>
   <script async="" src="js/A5016754-c5c9-4e3c-9cb0-07407f4f37131.js"></script>
   <script src="js/webfont.js" type="text/javascript"></script>
@@ -231,7 +235,7 @@
   <!-- End Google Tag Manager -->
 
   <style>
-    // General Scrollbar styling used on this site:
+    /* General Scrollbar styling used on this site: */
     ::-webkit-scrollbar {
       width: 15px;
     }
@@ -437,6 +441,7 @@
         </div>
       </div>
     </div>
+
 
     <div id="avantage" class="vb-premium-section">
       <div class="vb-container">
@@ -679,19 +684,29 @@
               <div class="html-calendly w-embed w-script">
                 <!-- Pour utiliser Calendly, remplacez l'URL ci-dessous par votre URL Calendly -->
                 <!-- Exemple: https://calendly.com/votre-nom/consultation -->
-                <div class="calendly-placeholder"
-                  style="min-width:480px;height:700px;display:flex;align-items:center;justify-content:center;background:#f0f0f0;border-radius:8px;">
-                  <div style="text-align:center;padding:20px;">
-                    <p style="color:#666;margin-bottom:15px;">📅 Planifiez votre consultation</p>
-                    <a href="https://wa.me/25766488517" target="_blank" rel="noopener noreferrer"
-                      style="display:inline-block;padding:12px 24px;background:#25D366;color:white;text-decoration:none;border-radius:6px;font-weight:bold;">Contactez-nous
-                      sur WhatsApp</a>
-                  </div>
-                </div>
-                <!-- Si vous avez une URL Calendly, décommentez et utilisez ce code :
-                <div class="calendly-inline-widget" data-url="VOTRE_URL_CALENDLY_ICI" style="min-width:480px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                -->
+                <!-- Calendly badge widget begin -->
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                <script type="text/javascript">
+                  (function() {
+                    function initBadge() {
+                      if (window.Calendly) {
+                        Calendly.initBadgeWidget({
+                          url: 'https://calendly.com/visionboostersagency/vba',
+                          text: 'Schedule time with me',
+                          color: '#0069ff',
+                          textColor: '#ffffff',
+                          branding: true
+                        });
+                      }
+                    }
+                    if (document.readyState === 'complete') {
+                      initBadge();
+                    } else {
+                      window.addEventListener('load', initBadge);
+                    }
+                  })();
+                </script>
+                <!-- Calendly badge widget end -->
               </div>
               <div class="radial-container center opacity-60">
                 <div class="radial-test radial-smaller"></div>
@@ -701,7 +716,31 @@
         </div>
       </div>
     </div>
-    <div class="overlay-fade"></div>
+
+    <!-- Partners Section - Relocated with new logos -->
+    <div class="vb-partners-section">
+      <div class="vb-container">
+        <div class="vb-partners-slider">
+          <img src="images/partner/Armoirie_Burundi-242x300.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/NuyuAgency.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/pnud-logo-blue.svg" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/logo%20shine-01.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/image-11.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/Da%20logo%20W.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/Profile%20shine.jpg" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/Tweho%20logo-1.jpg" alt="Partner Logo" class="vb-partner-logo">
+          <!-- Duplicate for infinite loop -->
+          <img src="images/partner/Armoirie_Burundi-242x300.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/NuyuAgency.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/pnud-logo-blue.svg" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/logo%20shine-01.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/image-11.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/Da%20logo%20W.png" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/Profile%20shine.jpg" alt="Partner Logo" class="vb-partner-logo">
+          <img src="images/partner/Tweho%20logo-1.jpg" alt="Partner Logo" class="vb-partner-logo">
+        </div>
+      </div>
+    </div>
   </div>
   </div>
   <footer class="vb-footer">
@@ -764,9 +803,9 @@
           <a href="https://youtube.com/@brave_vision" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i
               class="bi bi-youtube"></i></a>
         </div>
-        <div class="vb-footer-copyright">
-          <p>&copy; 2025 Vision Boosters Agency. Tous droits réservés.</p>
-        </div>
+          <div class="vb-footer-copyright">
+            <p>&copy; <span class="copyright-year">2025</span> Vision Boosters Agency. Tous droits réservés.</p>
+          </div>
       </div>
     </div>
   </footer>
@@ -917,8 +956,6 @@
       overflow: visible !important;
     }
 
-    .flickity-button {}
-
     .flickity-page-dots {
       bottom: -40px;
       display: flex;
@@ -991,8 +1028,8 @@
       .f-testimonial-author {
         border-bottom-left-radius: 9px;
         border-bottom-right-radius: 9px;
-
       }
+    }
   </style>
 
   <script>
@@ -1003,47 +1040,7 @@
   </script>
 
   <!-- Intercom Chatbot -->
-  <script>
-    window.intercomSettings = {
-      api_base: "https://api-iam.eu.intercom.io",
-      app_id: "tzcwup0b",
-    };
-  </script>
-  <script>
-    (function () {
-      var w = window;
-      var ic = w.Intercom;
-      if (typeof ic === "function") {
-        ic("reattach_activator");
-        ic("update", intercomSettings);
-      } else {
-        var d = document;
-        var i = function () {
-          i.c(arguments);
-        };
-        i.q = [];
-        i.c = function (args) {
-          i.q.push(args);
-        };
-        w.Intercom = i;
-        function l() {
-          var s = d.createElement("script");
-          s.type = "text/javascript";
-          s.async = true;
-          s.src = "https://widget.intercom.io/widget/your_app_id";
-          var x = d.getElementsByTagName("script")[0];
-          x.parentNode.insertBefore(s, x);
-        }
-        if (document.readyState === "complete") {
-          l();
-        } else if (w.attachEvent) {
-          w.attachEvent("onload", l);
-        } else {
-          w.addEventListener("load", l, false);
-        }
-      }
-    })();
-  </script>
+  <!-- Scripts remain for future configuration if needed -->
   <!-- End Intercom Chatbot -->
   <script>
     let mainCarouselHome = ".flex-formation";
@@ -1071,6 +1068,73 @@
       }
     }
   </style>
+  <!-- Premium AI Assistant Chatbot -->
+  <div class="vb-assistant-container">
+    <div class="vb-assistant-button" id="chat-toggle">
+      <i class="bi bi-chat-dots-fill"></i>
+    </div>
+    <div class="vb-chat-window" id="chat-window">
+      <div class="vb-chat-header">
+        <h4><i class="bi bi-robot"></i> VB Assistant</h4>
+        <div class="vb-chat-close" id="chat-close"><i class="bi bi-x-lg"></i></div>
+      </div>
+      <div class="vb-chat-body" id="chat-body">
+        <div class="vb-chat-msg vb-msg-bot">
+          Bonjour ! Je suis l'assistant Vision Boosters. Comment puis-je vous aider aujourd'hui ?
+        </div>
+        <div class="vb-chat-options">
+          <div class="vb-chat-opt" onclick="chatAction('Nos Services')">Nos Services</div>
+          <div class="vb-chat-opt" onclick="chatAction('Tarifs')">Tarifs</div>
+          <div class="vb-chat-opt" onclick="chatAction('Rendez-vous')">Prendre RDV</div>
+        </div>
+      </div>
+      <div class="vb-chat-footer">
+        <div class="vb-chat-input-wrap">
+          <input type="text" class="vb-chat-input" id="chat-input" placeholder="Posez une question...">
+          <i class="bi bi-send-fill vb-chat-send" id="chat-send"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Copyright Auto-update
+    document.querySelectorAll('.copyright-year').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+
+    // Chatbot Logic
+    const toggle = document.getElementById('chat-toggle');
+    const windowChat = document.getElementById('chat-window');
+    const close = document.getElementById('chat-close');
+    const input = document.getElementById('chat-input');
+    const send = document.getElementById('chat-send');
+
+    toggle.addEventListener('click', () => {
+      windowChat.style.display = windowChat.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    close.addEventListener('click', () => {
+      windowChat.style.display = 'none';
+    });
+
+    function chatAction(text) {
+      window.open(`https://wa.me/25766488517?text=${encodeURIComponent("Bonjour Vision Boosters, je souhaiterais des informations sur : " + text)}`, '_blank');
+    }
+
+    function handleSend() {
+      const msg = input.value.trim();
+      if (msg) {
+        window.open(`https://wa.me/25766488517?text=${encodeURIComponent(msg)}`, '_blank');
+        input.value = '';
+      }
+    }
+
+    send.addEventListener('click', handleSend);
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSend();
+    });
+  </script>
 </body>
 
 </html>

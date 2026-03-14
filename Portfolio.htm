@@ -43,6 +43,9 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Calendly badge widget begin -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <!-- Calendly badge widget end -->
 
   <script src="ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script
@@ -103,9 +106,9 @@
 
   <link rel="stylesheet" href="../flickity%402.3.0/dist/flickity.min.css">
 
-  <!-- Start of Async ProveSource Code -->
+  <!-- External Scripts - Config Required 
   <script>!function (o, i) { window.provesrc && window.console && console.error && console.error("ProveSource is included twice in this page."), provesrc = window.provesrc = { dq: [], display: function () { this.dq.push(arguments) } }, o._provesrcAsyncInit = function () { /* TODO: Move API key to server-side config or environment variable and rotate if sensitive */ provesrc.init({ apiKey: "REPLACE_WITH_PROVESOURCE_PUBLIC_KEY", v: "0.0.4" }) }; var r = i.createElement("script"); r.type = "text/javascript", r.async = !0, r["ch" + "ar" + "set"] = "UTF-8", r.src = "https://cdn.provesrc.com/provesrc.js"; var e = i.getElementsByTagName("script")[0]; e.parentNode.insertBefore(r, e) }(window, document);</script>
-  <!-- End of Async ProveSource Code -->
+  -->
 </head>
 
 <body class="body">
@@ -315,15 +318,37 @@
             </li>
             <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
               <i class="bi bi-star-fill vb-gradient-text" style="font-size: 1.2rem; margin-top: 2px;"></i>
-              <span style="color: #ccc; font-size: 1.1rem;">Aspirez à créer une nouvelle entreprise innovante en mettant à profit le potentiel de l’intelligence artificielle !</span>
+          <span style="color: #ccc; font-size: 1.1rem;">Aspirez à créer une nouvelle entreprise innovante en mettant à profit le potentiel de l’intelligence artificielle !</span>
             </li>
             <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 10px;">
               <i class="bi bi-star-fill vb-gradient-text" style="font-size: 1.2rem; margin-top: 2px;"></i>
               <span style="color: #ccc; font-size: 1.1rem;">Êtes déterminé à faire évoluer votre entreprise grâce à des stratégies digitales avancées !</span>
             </li>
           </ul>
-
-        </div>
+        <!-- Calendly badge widget begin -->
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <script type="text/javascript">
+          (function() {
+            function initBadge() {
+              if (window.Calendly) {
+                Calendly.initBadgeWidget({
+                  url: 'https://calendly.com/visionboostersagency/vba',
+                  text: 'Schedule time with me',
+                  color: '#0069ff',
+                  textColor: '#ffffff',
+                  branding: true
+                });
+              }
+            }
+            if (document.readyState === 'complete') {
+              initBadge();
+            } else {
+              window.addEventListener('load', initBadge);
+            }
+          })();
+        </script>
+        <!-- Calendly badge widget end -->
+      </div>
         
       </div>
     </div>
@@ -390,7 +415,7 @@
               class="bi bi-youtube"></i></a>
         </div>
         <div class="vb-footer-copyright">
-          <p>&copy; 2025 Vision Boosters Agency. Tous droits réservés.</p>
+          <p>&copy; <span class="copyright-year">2025</span> Vision Boosters Agency. Tous droits réservés.</p>
         </div>
       </div>
     </div>
@@ -581,8 +606,6 @@
       overflow: visible !important;
     }
 
-    .flickity-button {}
-
     .flickity-page-dots {
       bottom: -40px;
       display: flex;
@@ -655,8 +678,8 @@
       .f-testimonial-author {
         border-bottom-left-radius: 9px;
         border-bottom-right-radius: 9px;
-
       }
+    }
   </style>
 
   <script>
@@ -669,7 +692,7 @@
 
 
 
-  <!-- Intercom Chatbot -->
+  <!-- Intercom Chatbot - Placeholder for future config
   <script>
     window.intercomSettings = {
       api_base: "https://api-iam.eu.intercom.io",
@@ -677,38 +700,9 @@
     };
   </script>
   <script>(function () {
-      var w = window;
-      var ic = w.Intercom;
-      if (typeof ic === "function") {
-        ic('reattach_activator');
-        ic('update', intercomSettings);
-      } else {
-        var d = document;
-        var i = function () {
-          i.c(arguments)
-        };
-        i.q = [];
-        i.c = function (args) {
-          i.q.push(args)
-        };
-        w.Intercom = i;
-        function l() {
-          var s = d.createElement('script');
-          s.type = 'text/javascript';
-          s.async = true;
-          s.src = 'https://widget.intercom.io/widget/your_app_id';
-          var x = d.getElementsByTagName('script')[0];
-          x.parentNode.insertBefore(s, x);
-        }
-        if (document.readyState === 'complete') {
-          l();
-        } else if (w.attachEvent) {
-          w.attachEvent('onload', l);
-        } else {
-          w.addEventListener('load', l, false);
-        }
-      }
+      ...
     })()</script>
+  -->
   <!-- End Intercom Chatbot -->
   <style>
     @media screen and (max-width: 768px) {
@@ -723,6 +717,73 @@
       display: none;
     }
   </style>
+  <!-- Premium AI Assistant Chatbot -->
+  <div class="vb-assistant-container">
+    <div class="vb-assistant-button" id="chat-toggle">
+      <i class="bi bi-chat-dots-fill"></i>
+    </div>
+    <div class="vb-chat-window" id="chat-window">
+      <div class="vb-chat-header">
+        <h4><i class="bi bi-robot"></i> VB Assistant</h4>
+        <div class="vb-chat-close" id="chat-close"><i class="bi bi-x-lg"></i></div>
+      </div>
+      <div class="vb-chat-body" id="chat-body">
+        <div class="vb-chat-msg vb-msg-bot">
+          Bonjour ! Je suis l'assistant Vision Boosters. Comment puis-je vous aider aujourd'hui ?
+        </div>
+        <div class="vb-chat-options">
+          <div class="vb-chat-opt" onclick="chatAction('Prendre RDV')">Prendre RDV</div>
+          <div class="vb-chat-opt" onclick="chatAction('Devis')">Demander un Devis</div>
+          <div class="vb-chat-opt" onclick="chatAction('WhatsApp')">WhatsApp Direct</div>
+        </div>
+      </div>
+      <div class="vb-chat-footer">
+        <div class="vb-chat-input-wrap">
+          <input type="text" class="vb-chat-input" id="chat-input" placeholder="Posez une question...">
+          <i class="bi bi-send-fill vb-chat-send" id="chat-send"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Copyright Auto-update
+    document.querySelectorAll('.copyright-year').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+
+    // Chatbot Logic
+    const toggle = document.getElementById('chat-toggle');
+    const windowChat = document.getElementById('chat-window');
+    const close = document.getElementById('chat-close');
+    const input = document.getElementById('chat-input');
+    const send = document.getElementById('chat-send');
+
+    toggle.addEventListener('click', () => {
+      windowChat.style.display = windowChat.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    close.addEventListener('click', () => {
+      windowChat.style.display = 'none';
+    });
+
+    function chatAction(text) {
+      window.open(`https://wa.me/25766488517?text=${encodeURIComponent("Bonjour Vision Boosters, je souhaiterais des informations sur : " + text)}`, '_blank');
+    }
+
+    function handleSend() {
+      const msg = input.value.trim();
+      if (msg) {
+        window.open(`https://wa.me/25766488517?text=${encodeURIComponent(msg)}`, '_blank');
+        input.value = '';
+      }
+    }
+
+    send.addEventListener('click', handleSend);
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSend();
+    });
+  </script>
 </body>
 
 </html>
