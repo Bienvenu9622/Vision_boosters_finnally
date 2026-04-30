@@ -178,7 +178,7 @@
               Que ce soit pour une consultation, une collaboration ou toute autre demande, nous sommes à votre écoute. Envoyez-nous un message et notre équipe vous répondra dans les plus brefs délais.
             </p>
             
-            <a href="#pricingDiv" class="vb-btn" style="display: inline-block;">
+            <a href="#vb-contact-form" class="vb-btn" style="display: inline-block;">
               <i class="bi bi-envelope-fill" style="margin-right: 8px;"></i> Contactez-Nous
             </a>
           </div>
@@ -242,6 +242,48 @@
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire → API locale /api/contact (dossier server/) -->
+    <div id="vb-contact-form" class="vb-premium-section" style="padding-top: 4rem; padding-bottom: 4rem; scroll-margin-top: 5rem;">
+      <div class="vb-container">
+        <div class="vb-section-title">
+          <h2>Envoyez-nous un <span class="vb-gradient-text">message</span></h2>
+          <p class="vb-desc">Décrivez votre besoin ci-dessous : notre équipe vous répond par e-mail dans les plus brefs délais.</p>
+        </div>
+        <div class="vb-card vb-contact-form-wrap" style="padding: 2rem; max-width: 640px; margin: 0 auto;">
+          <form id="vb-contact-form-el" novalidate>
+            <div class="vb-contact-form-honeypot" aria-hidden="true">
+              <label for="vb-company-hp">Company</label>
+              <input type="text" name="company" id="vb-company-hp" tabindex="-1" autocomplete="off">
+            </div>
+            <div style="margin-bottom: 1.25rem;">
+              <label for="vb-cf-name">Nom <span style="color:#dc5e6b">*</span></label>
+              <input type="text" id="vb-cf-name" name="name" required maxlength="200" autocomplete="name">
+            </div>
+            <div style="margin-bottom: 1.25rem;">
+              <label for="vb-cf-email">E-mail <span style="color:#dc5e6b">*</span></label>
+              <input type="email" id="vb-cf-email" name="email" required maxlength="320" autocomplete="email">
+            </div>
+            <div style="margin-bottom: 1.25rem;">
+              <label for="vb-cf-phone">Téléphone (optionnel)</label>
+              <input type="tel" id="vb-cf-phone" name="phone" maxlength="40" autocomplete="tel">
+            </div>
+            <div style="margin-bottom: 1.25rem;">
+              <label for="vb-cf-subject">Sujet (optionnel)</label>
+              <input type="text" id="vb-cf-subject" name="subject" maxlength="200">
+            </div>
+            <div style="margin-bottom: 1.25rem;">
+              <label for="vb-cf-message">Message <span style="color:#dc5e6b">*</span></label>
+              <textarea id="vb-cf-message" name="message" required maxlength="8000"></textarea>
+            </div>
+            <button type="submit" class="vb-btn" style="width: 100%; border: none; cursor: pointer;">
+              <i class="bi bi-send-fill" style="margin-right: 8px;"></i> Envoyer le message
+            </button>
+            <p id="vb-contact-form-status" class="vb-contact-form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </div>
@@ -422,7 +464,7 @@
   </footer>
   </div>
   <div class="set-all-components-to-display-none-and-use-this-div-to-create-a-symbol">
-    < <div fs-cc-scroll="disable" fs-cc="preferences" class="fs-cc-prefs_component w-form">
+    <div fs-cc-scroll="disable" fs-cc="preferences" class="fs-cc-prefs_component w-form">
       <form id="cookie-preferences" name="wf-form-Cookie-Preferences" data-name="Cookie Preferences" method="get"
         class="fs-cc-prefs_form" data-wf-page-id="63e74afb1eb4ad0e6fccfa1e"
         data-wf-element-id="1b449624-d080-5923-0e8f-9ab1e8e3504f">
@@ -809,6 +851,7 @@
       delay: 50
     });
   </script>
+  <script src="js/contact-form.js"></script>
 </body>
 
 </html>

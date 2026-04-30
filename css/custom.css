@@ -1127,3 +1127,99 @@ ul.list li {
   .vb-orb-2 { width: 350px; height: 350px; }
   .vb-orb-3 { width: 250px; height: 250px; }
 }
+
+/* --------- Contact form (Portfolio + API locale) --------- */
+
+.vb-contact-form-wrap label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--vb-text-soft);
+  margin-bottom: 0.35rem;
+}
+
+.vb-contact-form-wrap input[type="text"],
+.vb-contact-form-wrap input[type="email"],
+.vb-contact-form-wrap input[type="tel"],
+.vb-contact-form-wrap textarea,
+.vb-contact-form-wrap select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--vb-radius-md);
+  border: 1px solid var(--vb-border-subtle);
+  background: rgba(15, 23, 42, 0.65);
+  color: var(--vb-text-strong);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.vb-contact-form-wrap input:focus,
+.vb-contact-form-wrap textarea:focus,
+.vb-contact-form-wrap select:focus {
+  outline: none;
+  border-color: rgba(95, 100, 225, 0.55);
+  box-shadow: 0 0 0 3px var(--vb-primary-soft);
+}
+
+.vb-contact-form-wrap textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.vb-contact-form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.vb-contact-form-status {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--vb-radius-md);
+  font-size: 1rem;
+  line-height: 1.55;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: pre-line;
+  min-height: 0;
+}
+
+.vb-contact-form-status:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  border: none;
+}
+
+.vb-contact-form-status--ok {
+  color: #ecfdf5;
+  background: linear-gradient(
+    145deg,
+    rgba(16, 185, 129, 0.45) 0%,
+    rgba(5, 150, 105, 0.35) 100%
+  );
+  border-color: rgba(110, 231, 183, 0.85);
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.25),
+    0 8px 24px rgba(16, 185, 129, 0.12);
+}
+
+.vb-contact-form-status--warn {
+  color: #fffbeb;
+  font-weight: 600;
+  background: rgba(245, 158, 11, 0.35);
+  border-color: rgba(252, 211, 77, 0.75);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
+}
+
+.vb-contact-form-status--error {
+  color: #fef2f2;
+  font-weight: 600;
+  background: rgba(220, 38, 38, 0.38);
+  border-color: rgba(252, 165, 165, 0.7);
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.1);
+}
